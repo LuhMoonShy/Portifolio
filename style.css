@@ -1,0 +1,382 @@
+*{
+    margin: 0;
+    padding: 0; 
+}
+html{
+    scroll-behavior: smooth;
+}
+html::-webkit-scrollbar {
+    width: 10px;
+}
+
+html::-webkit-scrollbar-track {
+    background: rgb(78, 77, 77);
+    border-radius: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: rgb(51, 51, 51);
+    border-radius: 10px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background: rgb(31, 31, 31);
+    border-radius: 10px;
+}
+
+html::-webkit-scrollbar-thumb:active {
+    background: rgb(0, 0, 0);
+    border-radius: 10px;
+}
+body{
+    font-size: 100%;
+    font-family: 'Courier New', Courier, monospace;
+}
+div, section, span, ul, li, a, header{
+    box-sizing: border-box;
+}
+
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 10px;
+    position: fixed;
+    z-index: 999;
+    background-color: #418ffdb9;
+    box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+}
+header a{
+    margin-left: 4%;
+}
+header #menu{
+    margin-right: 4%;
+}
+#menu li{
+    list-style: none;
+    display: inline-block;
+}
+#menu li a{
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 18px 25px;
+    margin-left: auto;
+}
+#menu a:hover{
+    color: #b8deff;
+    background-color: #00012a6d;
+    border-radius: 5px;
+    box-shadow: #ffffff;
+}
+
+
+
+section{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    float: left;
+}
+#home{
+    background-color: rgb(15, 15, 15);
+}
+
+
+#aboutMe{
+    background-color: #ffffff;
+    padding: 5%;
+    text-align: center;
+}
+#aboutMe h1{
+    padding: 2rem;
+}
+#aboutMe .article{
+    column-count: 3;
+    column-gap: 4rem;
+    column-rule: 5px dashed rgb(57, 176, 255);
+}
+#aboutMe .article p{
+    font-size: 20px;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+.CVButton {
+    --width: 150px;
+    --height: 45px;
+    --tooltip-height: 25px;
+    --tooltip-width: 120px;
+    --gap-between-tooltip-to-button: 10px;
+    --button-color: #1163ff;
+    --tooltip-color: #fff;
+    width: var(--width);
+    height: var(--height);
+    background: var(--button-color);
+    position: relative;
+    margin-left: 120px;
+    margin-top: 40px;
+    text-align: center;
+    border-radius: 0.45em;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+.CVButton::before {
+    position: absolute;
+    content: attr(data-tooltip);
+    width: var(--tooltip-width);
+    height: var(--tooltip-height);
+    background-color: var(--tooltip-color);
+    font-size: 0.9rem;
+    color: #111;
+    border-radius: .25em;
+    line-height: var(--tooltip-height);
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+    left: calc(50% - var(--tooltip-width) / 2);
+}
+
+.CVButton::after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: var(--tooltip-color);
+    left: calc(50% - 10px);
+    bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+}
+
+.CVButton::after,.CVButton::before {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+}
+
+.CVText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.CVButton-wrapper,.CVText,.CVIcon {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    color: #fff;
+}
+
+.CVText {
+    top: 0
+}
+
+.CVText,.CVIcon {
+    transition: top 0.5s;
+}
+
+.CVIcon {
+    color: #fff;
+    top: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.CVIcon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.CVButton:hover {
+    background: #6c18ff;
+}
+
+.CVButton:hover .CVText {
+    top: -100%;
+}
+
+.CVButton:hover .CVIcon {
+    top: 0;
+}
+
+.CVButton:hover:before,.CVButton:hover:after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.CVButton:hover:after {
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+}
+
+.CVButton:hover:before {
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+}
+.giphy-embed{
+    margin-top: 50px;
+}
+
+
+
+#certification{
+    background-color: rgb(15, 15, 15);
+    padding: 5%;
+    text-align: center;
+}
+#certification h1{
+    color: white;
+    letter-spacing: 2px;
+    margin-top: 30px;
+}
+#certification p {
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    margin-top: 25px;
+}
+#certification .certificationImg{
+    width: 100%;
+    display: flex;
+    height: 40rem;
+    gap: 1rem;
+
+}
+#certification .certificationImg > div{
+    flex: 1;
+    border-radius: 1rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    transition: all .8s cubic-bezier(.25, .4, .45, 1.4);
+}
+#certification .certificationImg > div:hover{
+    flex: 5;
+}
+
+
+#skills{
+    background-color: #ffffff;
+    padding: 5%;
+}
+#skills h1{
+    text-align: center;
+}
+#skills .skillsProgress{
+    display: flex;
+    font-size: 18px;
+    align-items: center;
+}
+#skills .rightContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.progress-bar {
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border: 1px solid black;
+    height: 20px;
+    width: 20%;
+    border-radius: 10px;
+}
+::-webkit-progress-value{
+    background-color: #000;
+    border-radius: 10px;
+    color: white;
+}
+::-webkit-progress-bar{
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+
+
+#projects{
+    background-color: #000000;
+}
+
+
+#contact{
+    background-color: #ffffff;
+}
+
+
+.firstScreen{
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+#left{
+    width: 40%;
+    height: 100vh;
+    margin-left: 70px;
+}
+.title{
+    margin-top: 90px;
+    margin-left: 90px;
+    height: 120px;
+    font-size: 20px;
+}
+.text{
+    margin-top: 40px;
+    font-size: 20px;
+    color: #fff;
+    text-align: justify;
+}
+#left h1{
+    color: #00aaff;
+}
+#left h1 span{
+    color: #0062a8;
+}
+#right{
+    width: 50%;
+    height: 100vh;
+}
+#right img{
+    width: 60%;
+    max-width: 100%;
+    height: auto;
+    margin-left: 21% ;
+    margin-top: 90px;
+    border-radius: 48px;
+    background: #e0e0e0;
+    box-shadow: 12px 12px 24px #1a1b32,
+                12px -12px 24px #0095ff;
+}
+#right li{
+    text-decoration: none;
+    list-style: none;
+    padding: 15px 28px;
+    margin: 5px;
+    display: inline-block;
+    margin-top: 120px;
+    width: 30%;
+    max-width: 100%;
+}
+#right li button {
+    padding: 10px 20px;
+    border: none;
+    font-size: 17px;
+    color: #fff;
+    border-radius: 7px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.5s;
+    transition-property: box-shadow;
+    background: rgb(0,140,255);
+    box-shadow: 0 0 25px rgb(0,140,255);
+}
+#right li button:hover {
+    box-shadow: 0 0 5px rgb(0,140,255),
+    0 0 25px rgb(0,140,255),
+    0 0 50px rgb(0,140,255),
+    0 0 100px rgb(0,140,255);
+}
